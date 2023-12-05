@@ -1,0 +1,426 @@
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-brands-400.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-brands-400.woff) format("woff"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-brands-400.ttf) format("truetype")
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands"
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-display: auto;
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.eot);
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.eot?#iefix) format("embedded-opentype"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.woff) format("woff"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.ttf) format("truetype"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.svg#fontawesome) format("svg")
+}
+
+.fal {
+    font-weight: 300
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.eot);
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.woff) format("woff"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.ttf) format("truetype"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.svg#fontawesome) format("svg")
+}
+
+.fal,
+.far {
+    font-family: "Font Awesome 5 Pro"
+}
+
+.far {
+    font-weight: 400
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.eot);
+    src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.woff) format("woff"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.ttf) format("truetype"), url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.svg#fontawesome) format("svg")
+}
+
+.fa,
+.fas {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900
+}
+
+#onetrust-reject-all-handler {
+    display: none !important;
+}
+
+#ot-sdk-btn-floating {
+    display: none !important;
+}
+
+.fc-ab-root .fc-close {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+.fc-ab-root .fc-button,
+.fc-ab-root .fc-close {
+    cursor: pointer !important;
+    outline: 0 !important;
+    opacity: 1 !important
+}
+
+div.fc-ab-root {
+    align-items: center !important;
+    left: 0 !important;
+    overflow-x: auto !important;
+    top: 0 !important;
+    justify-content: center !important
+}
+
+.fc-ab-root a,
+.fc-ab-root a:link,
+.fc-ab-root button,
+.fc-ab-root div,
+.fc-ab-root h1,
+.fc-ab-root h2,
+.fc-ab-root header,
+.fc-ab-root i,
+.fc-ab-root p,
+div.fc-ab-root {
+    app-region: none !important;
+    appearance: none !important;
+    border-spacing: 0px !important;
+    -webkit-border-image: none !important;
+    -webkit-box-align: stretch !important;
+    -webkit-box-decoration-break: slice !important;
+    -webkit-box-direction: normal !important;
+    -webkit-box-flex: 0 !important;
+    -webkit-box-ordinal-group: 1 !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-pack: start !important;
+    -webkit-font-smoothing: auto !important;
+    -webkit-highlight: none !important;
+    -webkit-hyphenate-character: auto !important;
+    -webkit-line-break: auto !important;
+    -webkit-locale: auto !important;
+    -webkit-mask-box-image-source: none !important;
+    -webkit-mask-box-image-slice: initial !important;
+    -webkit-mask-box-image-width: initial !important;
+    -webkit-mask-box-image-outset: initial !important;
+    -webkit-mask-box-image-repeat: initial !important;
+    -webkit-mask-clip: border-box !important;
+    -webkit-mask-composite: source-over !important;
+    -webkit-mask-image: none !important;
+    -webkit-mask-origin: border-box !important;
+    -webkit-mask-position: 0% 0% !important;
+    -webkit-mask-repeat: repeat;
+    -webkit-mask-size: auto !important;
+    -webkit-print-color-adjust: economy !important;
+    -webkit-rtl-ordering: logical !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.4) !important;
+    -webkit-text-combine: none !important;
+    -webkit-text-decorations-in-effect: none !important;
+    text-emphasis: none rgb(0, 0, 0) !important;
+    text-emphasis-position: over right !important;
+    -webkit-text-orientation: vertical-right !important;
+    -webkit-text-security: none !important;
+    -webkit-text-stroke: 0px rgb(0, 0, 0) !important;
+    -webkit-user-drag: auto !important;
+    -webkit-writing-mode: horizontal-tb !important;
+    place-content: normal !important;
+    place-items: normal !important;
+    place-self: auto !important;
+    alignment-baseline: auto !important;
+    animation: none !important;
+    backdrop-filter: none !important;
+    backface-visibility: visible !important;
+    background: rgba(0, 0, 0, 0) !important;
+    background-blend-mode: normal !important;
+    baseline-shift: 0 !important;
+    border-radius: 0 !important;
+    border: 0 #000 !important;
+    border-collapse: separate !important;
+    border-image: none 100%/1/0 stretch !important;
+    inset: auto !important;
+    box-shadow: none !important;
+    box-sizing: content-box !important;
+    break-after: auto !important;
+    break-before: auto !important;
+    break-inside: auto !important;
+    buffered-rendering: auto !important;
+    caption-side: top !important;
+    caret-color: rgb(0, 0, 0) !important;
+    clear: none !important;
+    clip-path: none !important;
+    clip-rule: nonzero !important;
+    clip: auto !important;
+    color-interpolation-filters: linearrgb !important;
+    color-interpolation: srgb !important;
+    color-rendering: auto !important;
+    color: #000 !important;
+    columns: auto auto !important;
+    gap: normal !important;
+    column-rule: 0px none rgb(0, 0, 0) !important;
+    column-span: none !important;
+    content: normal !important;
+    cursor: auto !important;
+    cx: 0px !important;
+    cy: 0px !important;
+    d: none !important;
+    display: inline !important;
+    dominant-baseline: auto !important;
+    empty-cells: show !important;
+    fill-opacity: 1 !important;
+    fill-rule: nonzero !important;
+    filter: none !important;
+    flex: 0 1 auto !important;
+    flex-flow: row nowrap !important;
+    float: none !important;
+    flood-color: rgb(0, 0, 0) !important;
+    flood-opacity: 1 !important;
+    font-kerning: auto !important;
+    font-optical-sizing: auto !important;
+    font-size: 16px !important;
+    font-stretch: 100% !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 400 !important;
+    grid: auto-flow auto/none !important;
+    grid-area: auto/auto/auto/auto !important;
+    height: auto !important;
+    hyphens: manual !important;
+    image-rendering: auto !important;
+    isolation: auto !important;
+    letter-spacing: normal !important;
+    lighting-color: rgb(255, 255, 255) !important;
+    line-break: auto !important;
+    line-height: normal !important;
+    list-style: none !important;
+    margin: 0 !important;
+    marker: none !important;
+    mask-type: luminance !important;
+    mask: none !important;
+    max-height: none !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    min-width: 0 !important;
+    mix-blend-mode: normal !important;
+    object-fit: fill !important;
+    object-position: 50% 50% !important;
+    offset: none 0px auto 0deg !important;
+    opacity: 1 !important;
+    order: 0 !important;
+    orphans: 2 !important;
+    outline: rgb(0, 0, 0) 0 !important;
+    outline-offset: 0px !important;
+    overflow-anchor: auto !important;
+    overflow-wrap: normal !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    paint-order: normal !important;
+    perspective-origin: 0px 0px !important;
+    perspective: none !important;
+    pointer-events: auto !important;
+    position: static !important;
+    r: 0px !important;
+    resize: none !important;
+    rx: auto !important;
+    ry: auto !important;
+    scroll-behavior: auto !important;
+    shape-image-threshold: 0 !important;
+    shape-margin: 0px !important;
+    shape-outside: none !important;
+    shape-rendering: auto !important;
+    speak: normal !important;
+    stop-color: rgb(0, 0, 0) !important;
+    stop-opacity: 1 !important;
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+    stroke-linecap: butt !important;
+    stroke-linejoin: miter !important;
+    stroke-miterlimit: 4 !important;
+    stroke-opacity: 1 !important;
+    stroke-width: 1px !important;
+    stroke: none !important;
+    tab-size: 8 !important;
+    table-layout: auto !important;
+    text-align-last: auto !important;
+    text-align: start !important;
+    text-anchor: start !important;
+    text-decoration-skip-ink: auto !important;
+    text-decoration: none solid rgb(0, 0, 0) !important;
+    text-indent: 0 !important;
+    text-overflow: clip !important;
+    text-rendering: auto !important;
+    text-shadow: none !important;
+    text-size-adjust: auto !important;
+    text-transform: none !important;
+    text-underline-position: auto !important;
+    touch-action: auto !important;
+    transform-origin: 0px 0px !important;
+    transform-style: flat !important;
+    transform: none !important;
+    transition: none !important;
+    unicode-bidi: normal !important;
+    user-select: auto !important;
+    vector-effect: none !important;
+    vertical-align: baseline !important;
+    visibility: visible !important;
+    white-space: normal !important;
+    widows: 2 !important;
+    width: auto !important;
+    will-change: auto !important;
+    word-break: normal !important;
+    word-spacing: 0px !important;
+    writing-mode: horizontal-tb !important;
+    x: 0px !important;
+    y: 0px !important;
+    z-index: auto !important;
+    zoom: 1 !important
+}
+
+.fc-ab-root .fc-dialog-overlay,
+.fc-whitelist-root .fc-dialog-overlay {
+    background-color: #000 !important;
+    height: 100% !important;
+    left: 0 !important;
+    opacity: .3 !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: -1 !important
+}
+
+.fc-ab-root .fc-dialog-container {
+    box-shadow: rgb(136 136 136) 0 0 .75em !important;
+    background: #fff !important;
+    border: none !important;
+    border-radius: .5em !important;
+    direction: ltr !important
+}
+
+.fc-ab-root .fc-close {
+    box-sizing: border-box !important;
+    color: #fff !important;
+    direction: ltr !important;
+    display: inline-block !important;
+    font-size: 1em !important;
+    height: 40px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    text-indent: 0 !important;
+    width: 40px !important;
+    z-index: 1 !important;
+    top: 0 !important;
+    right: 0 !important;
+    position: absolute !important
+}
+
+.fc-ab-root section,
+.fc-ab-root section header {
+    background-color: transparent !important;
+    border: 0 !important;
+    display: block !important;
+    font-size: 1em !important;
+    letter-spacing: normal !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    outline: 0 !important;
+    padding: 0 !important;
+    position: static !important
+}
+
+.fc-ab-root .fc-dialog-body p,
+.fc-ab-root header h1 {
+    display: block !important;
+    margin-bottom: .5em !important;
+    margin-top: 0 !important;
+    font-size: 1.25em !important
+}
+
+.fc-ab-root header h1 {
+    line-height: 1.3 !important;
+    padding: 0 !important;
+    overflow-wrap: break-word !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    text-decoration: initial !important;
+    text-align: center !important;
+    font-family: Roboto !important;
+    color: #747a80 !important
+}
+
+.fc-ab-root .fc-header-image-container {
+    padding-bottom: 6px !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important
+}
+
+.fc-ab-root .fc-dialog-body {
+    font: inherit !important
+}
+
+.fc-ab-root .fc-button,
+.fc-ab-root .fc-dialog-body p {
+    overflow-wrap: break-word !important;
+    font-style: normal !important;
+    text-decoration: initial !important;
+    text-align: center !important;
+    font-family: Roboto !important
+}
+
+.fc-ab-root .fc-dialog-body p {
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    color: #000 !important
+}
+
+.fc-ab-root .fc-buttons {
+    justify-content: center !important;
+    align-items: stretch !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    font-size: inherit !important;
+    margin-top: 1em !important;
+    width: 100% !important
+}
+
+.fc-ab-root .fc-button {
+    display: flex !important;
+    flex-grow: 0 !important;
+    letter-spacing: normal !important;
+    margin: .25em !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    font-size: 1.25em !important;
+    padding: .5em 1em !important;
+    background: #09f !important;
+    border: none !important;
+    border-radius: .25em !important
+}
+
+.fc-ab-root .fc-button-label {
+    align-self: center !important;
+    color: inherit !important;
+    cursor: pointer !important;
+    font-style: inherit !important;
+    font-variant: inherit !important;
+    font-weight: inherit !important;
+    font-stretch: inherit !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    line-height: 1.4em !important;
+    margin: 0 !important;
+    min-width: 168px !important;
+    text-align: inherit !important;
+    width: 100% !important
+}
