@@ -9,7 +9,7 @@ import Fingerprint2 from 'Fingerprint2';
 import gapi from 'gapi';
 import grecaptcha from 'grecaptcha';
 import __tcfapi from '__tcfapi';
-
+//test
 import {
     DEBUG_state_until_third_level_2_table,
     wpo,
