@@ -1,0 +1,12 @@
+{
+    "hello": "Ciao",
+    "hello-name": "Ciao {name}",
+    "hello-2": "Ciao2",
+    "hello-2-name": "Ciao2 {name}",
+    "hello-3": "Ciao3",
+    "hello-3-name": "Ciao3 {name}",
+    "hello-4": "Ciao4",
+    "hello-4-name": "Ciao4 {name}",
+    "hello-5": "Ciao5",
+    "hello-5-name": "Ciao5 {name}"
+}
