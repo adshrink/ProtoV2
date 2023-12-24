@@ -3,6 +3,8 @@ import './css/appStyle.css';
 import './css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 
+import React, { Component } from 'react';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import $ from 'jquery';
 import Cookies from 'Cookies';
@@ -31,6 +33,7 @@ import ErrorBoundary from './errorComponent';
 import SemanticUiResponsive from './responsiveComponent';
 
 import AdsenseBanner from './ui/adsense';
+import Step from './step';
 
 import { Footer } from './ui/static';
 
@@ -3571,96 +3574,96 @@ function ComponentSecondInfoSegment(props) {
 
 }
 
-function ComponentChangeLanguage(props) {
+// function ComponentChangeLanguage(props) {
 
-    $(document).ready(() => {
+//     $(document).ready(() => {
 
-        $('#system_navbar_dropdown_language').dropdown({
-            on: 'hover',
-            onChange: function (select_languange, text, $selectedItem) {
+//         $('#system_navbar_dropdown_language').dropdown({
+//             on: 'hover',
+//             onChange: function (select_languange, text, $selectedItem) {
 
-                if (select_languange === 'local') {
-                    language = ___reactjsD.language[detectLang];
+//                 if (select_languange === 'local') {
+//                     language = ___reactjsD.language[detectLang];
 
-                    //window.localStorage.removeItem('language');
-                    //window.localStorage.removeItem('language_text');
+//                     //window.localStorage.removeItem('language');
+//                     //window.localStorage.removeItem('language_text');
 
-                    window.location.reload();
+//                     window.location.reload();
 
-                    return false;
-                }
+//                     return false;
+//                 }
 
-                language = ___reactjsD.language[select_languange];
+//                 language = ___reactjsD.language[select_languange];
 
-                //window.localStorage.setItem('language', select_languange);
-                //window.localStorage.setItem('language_text', text);
+//                 //window.localStorage.setItem('language', select_languange);
+//                 //window.localStorage.setItem('language_text', text);
 
-                window.location.reload();
+//                 window.location.reload();
 
-            }
-        });
+//             }
+//         });
 
-    });
+//     });
 
-    function return_first_text_placeholder() {
+//     function return_first_text_placeholder() {
 
-        const lt = { en: 'English', it: 'Italian', ja: '日本の', hi: 'हिन्दी', fr: 'Français (France)', es: 'Español', pt: 'Português (Brasil)', ar: 'العربية', de: 'Deutsch', ko: '한국의', zh: '中国' }
+//         const lt = { en: 'English', it: 'Italian', ja: '日本の', hi: 'हिन्दी', fr: 'Français (France)', es: 'Español', pt: 'Português (Brasil)', ar: 'العربية', de: 'Deutsch', ko: '한국의', zh: '中国' }
 
-        const language = 'en'; //window.localStorage.getItem('language');
-        const language_text = 'English'; //window.localStorage.getItem('language_text');
+//         const language = 'en'; //window.localStorage.getItem('language');
+//         const language_text = 'English'; //window.localStorage.getItem('language_text');
 
-        var html = null;
+//         var html = null;
 
-        if (isEmpty(language) || language === 'local') {
-            html = <div>
-                <i className="world icon"></i> Local
-            </div>;
-        } else {
-            html = <div>
-                <i className={language + " flag"}></i>{" " + lt[language]}
-            </div>;
-        }
+//         if (isEmpty(language) || language === 'local') {
+//             html = <div>
+//                 <i className="world icon"></i> Local
+//             </div>;
+//         } else {
+//             html = <div>
+//                 <i className={language + " flag"}></i>{" " + lt[language]}
+//             </div>;
+//         }
 
-        return html;
+//         return html;
 
-    }
+//     }
 
-    return (
+//     return (
 
-        <div className="ui floating dropdown labeled item white-text-color" id="system_navbar_dropdown_language">
+//         <div className="ui floating dropdown labeled item white-text-color" id="system_navbar_dropdown_language">
 
-            <div> {return_first_text_placeholder()} </div>
+//             <div> {return_first_text_placeholder()} </div>
 
-            <div className="menu">
+//             <div className="menu">
 
-                <div className="item" data-value="local"><i className="world icon"></i> Local</div>
+//                 <div className="item" data-value="local"><i className="world icon"></i> Local</div>
 
-                <div className="divider"></div>
+//                 <div className="divider"></div>
 
-                <div className="header">
-                    <i className="tags icon"></i>
-                    Filter by availability
-                </div>
+//                 <div className="header">
+//                     <i className="tags icon"></i>
+//                     Filter by availability
+//                 </div>
 
-                <div className="item" data-value="it"><i className="it flag"></i> Italian</div>
-                <div className="item" data-value="en"><i className="uk flag"></i> English</div>
-                <div className="item" data-value="ja"><i className="jp flag"></i> 日本の</div>
-                <div className="item" data-value="hi"><i className="in flag"></i> हिन्दी</div>
-                <div className="item" data-value="ar"><i className="ae flag"></i> العربية</div>
-                <div className="item" data-value="fr"><i className="fr flag"></i> Français (France)</div>
-                <div className="item" data-value="es"><i className="es flag"></i><i className="mx flag"></i> Español</div>
-                <div className="item" data-value="pt"><i className="pt flag"></i><i className="br flag"></i> Português (Brasil)</div>
-                <div className="item" data-value="ko"><i className="kr flag"></i> 한국의</div>
-                <div className="item" data-value="zh"><i className="cn flag"></i> 中国</div>
-                <div className="item" data-value="de"><i className="de flag"></i> Deutsch</div>
+//                 <div className="item" data-value="it"><i className="it flag"></i> Italian</div>
+//                 <div className="item" data-value="en"><i className="uk flag"></i> English</div>
+//                 <div className="item" data-value="ja"><i className="jp flag"></i> 日本の</div>
+//                 <div className="item" data-value="hi"><i className="in flag"></i> हिन्दी</div>
+//                 <div className="item" data-value="ar"><i className="ae flag"></i> العربية</div>
+//                 <div className="item" data-value="fr"><i className="fr flag"></i> Français (France)</div>
+//                 <div className="item" data-value="es"><i className="es flag"></i><i className="mx flag"></i> Español</div>
+//                 <div className="item" data-value="pt"><i className="pt flag"></i><i className="br flag"></i> Português (Brasil)</div>
+//                 <div className="item" data-value="ko"><i className="kr flag"></i> 한국의</div>
+//                 <div className="item" data-value="zh"><i className="cn flag"></i> 中国</div>
+//                 <div className="item" data-value="de"><i className="de flag"></i> Deutsch</div>
 
-            </div>
+//             </div>
 
-        </div>
+//         </div>
 
-    );
+//     );
 
-}
+// }
 
 class ModalComponentSaved extends React.Component {
     constructor(props) {
@@ -10939,7 +10942,7 @@ class MainApp extends React.Component {
 
                             visitorData={this.visitorData()}
                         >
-                            <AdsMiddleware>
+                            <AdsMiddleware> 
                                 <SemanticUiResponsive
                                     device_form={page_properties_device_form}
                                     header={<SemanticNav
@@ -10959,10 +10962,41 @@ class MainApp extends React.Component {
     }
 }
 
+
+
+//Router
+
+
+class Routing extends Component {
+    render() {
+        return (
+            <Router>
+                <div>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <ul className="navbar-nav mr-auto">
+                            <li><Link to={'/home'} className="nav-link"> Main </Link></li>
+                            <li><Link to={'/step'} className="nav-link">Step</Link></li>
+                        </ul>
+                    </nav>
+                    <Switch>
+                        {/* <Route path='/' render={() => <MainApp dynamic={window.dynamic} timerStart={window.timerStart} data={window._sharedData} />} />
+                        <Route path="/step" render={() => <Step />} /> */}
+                        <Route path="/home" component={MainApp} />
+                        <Route path="/step" component={Step} />
+                    </Switch>
+                </div>
+            </Router>
+        );
+    }
+}
+
+
+
 /** CATCHER */
 
 ReactDOM.render(
     <React.StrictMode>
-        <MainApp dynamic={window.dynamic} timerStart={window.timerStart} data={window._sharedData} /></React.StrictMode>,
+        <Routing />
+    </React.StrictMode>,
     document.getElementById('app')
 );

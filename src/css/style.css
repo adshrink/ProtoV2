@@ -496,13 +496,100 @@ div.fc-ab-root {
 
 .gutter-row{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    background-color: aliceblue;
     /* border-radius: 15px; */
 } 
 .ant-card-body{    
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 
 .ant-tabs{
     background-color: floralwhite;
+}
+
+.step-btn-group{    
+    position: relative;
+    top: 35vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+}
+
+.nav-search, .curr-user{
+    display: inline-block;
+}
+.curr-user .user-info, .curr-user button {
+    display: inline-block;
+}
+.nav-content{
+    width: 100%;
+    text-align: right;
+}
+
+.user-info span{
+    padding-left: "10px";
+}
+
+.mobile-nav{
+    padding: 13px 20px;
+    width: 100%;
+    text-align: right;
+}
+
+@media screen and (min-width: 769px) {
+    .nav-content{
+        display: block;
+    }
+    .mobile-nav{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-content{
+        display: none;
+    }
+    .mobile-nav{
+        display: block;
+    }
+}
+
+
+.logo-nav, .nav-content{
+    background-color: azure;
+}
+
+.adsense-bar{
+    background-color: gray;
+}
+
+.adsense-bar img{
+    height: 200px;
+    padding-left: 30%;
+}
+
+.nav-item-button{
+    border: none;
+    background-color: azure;
+    height: 58px;
+}
+.nav-item-button:hover, 
+.nav-item-button:focus{
+    background-color: #1890ff;
+    border: none;
+    color: #fff;
+}
+.user-card{
+    position: absolute;
+    bottom: 2px;
+}
+
+.free-access-btn{
+    background-color: #ffc107;
+    border: none;
+    padding: 10px;
+    color: #fff;
+}
+
+
+.ant-tabs-nav .ant-tabs-tab-active{
+    color: red;
 }
