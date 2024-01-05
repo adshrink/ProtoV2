@@ -46,8 +46,8 @@ class OverlayVisible extends React.Component {
                 </Menu.Item>
                 <Menu.Item key="3">
                     <div className="user-info p-2">
+                        <span style={{ paddingRight: "10px" }}>Jack Jone</span>
                         <Avatar className="bg-success" icon="user" />
-                        <span style={{ paddingLeft: "10px" }}>Jack Jone</span>
                     </div>
                 </Menu.Item>
             </Menu>
@@ -124,11 +124,11 @@ export function Header(props) {
                     />
                     <div className="curr-user">
                         <Dropdown overlay={menu} placement="bottomLeft">
-                            <button className="nav-item-button px-3">My account</button>
+                            <button className="nav-item-button px-3">Premium</button>
                         </Dropdown>
                         <div className="user-info px-3">
+                            <span style={{ paddingRight: "10px" }}>Jack Jone</span>
                             <Avatar className="bg-success" icon="user" />
-                            <span style={{ paddingLeft: "10px" }}>Jack Jone</span>
                         </div>
                     </div>
                 </div>

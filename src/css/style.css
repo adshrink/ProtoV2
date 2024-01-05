@@ -563,7 +563,7 @@ div.fc-ab-root {
 
 .adsense-bar img{
     height: 200px;
-    padding-left: 30%;
+    /* padding-left: 20%; */
 }
 
 .nav-item-button{
@@ -592,4 +592,40 @@ div.fc-ab-root {
 
 .ant-tabs-nav .ant-tabs-tab-active{
     color: red;
+}
+.side-adsense{
+    margin-top: 20px;
+    min-height: 300px;
+    background-color: grey;
+}
+.side-adsense img{
+    padding-top: 20px;
+}
+#g-recaptcha{
+    border: 1px solid #1a73e8;
+    border-top: 9px solid #1a73e8;
+    width: 304px;
+    height: 86px;
+}
+
+.news-img{
+    display: inline-block;
+    width: 40%;
+    height: 90px;
+    background-size: cover;
+}
+.news-cnt{
+    display: inline-block;
+    width: 59%;
+    position: absolute;
+    top: 25px;
+    padding: 7px;
+}
+.news-item{
+    height: 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.main-title{
+    padding: 10px 0px;
+    cursor: pointer;
 }

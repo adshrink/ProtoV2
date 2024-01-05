@@ -24,6 +24,7 @@ import img9 from "./images/img-9.jpg";
 import img10 from "./images/img-10.jpg";
 import img11 from "./images/img-11.jpg";
 import img12 from "./images/img-12.jpg";
+import img13 from "./images/img-13.jpg";
 
 // import Tabs from "./tab";
 import { Button, Icon, Card, CardBody, CardHeader, Col, Container, Row, Badge, Tabs } from 'antd';
@@ -212,8 +213,24 @@ export default class SemanticUiResponsive extends React.Component {
                 <div id="adshnk-main-container" className="container">
                     <ErrorBoundary><AdsenseBanner size={'leaderboard'} from={'Component'} /></ErrorBoundary>
                     <div className="adsense-bar">
-                        <img alt="example" src={img7} />
+                        <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]} >
+                            <Col md={12} className="text-right">
+                                <img alt="example" src={img7} />
+                            </Col>
+                            <Col md={12}>
+                                <div style={{ padding: "20px" }}>
+                                    <span className='bg-secondary text-white px-3 py-1 m-2' style={{ borderRadius: "20px", fontSize: "10px" }}>
+                                        <Icon type="notification" /> Advertisment
+                                    </span>
+                                    <br />
+                                    <h3 className="pt-4">This platform is our service of traveling</h3>
+                                    <button className="free-access-btn rounded px-3"><Link to={'/step'} className="text-white">Learn more<Icon style={{ paddingLeft: "10px" }} type="arrow-right" /></Link></button>
+                                </div>
+                            </Col>
+
+                        </Row>
                     </div>
+
 
                     <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]} className="pt-4">
                         <Col className="mb-4" md={24} lg={16}>
@@ -303,6 +320,10 @@ export default class SemanticUiResponsive extends React.Component {
                                     </TabPane>
                                 </Tabs>
                             </div>
+                            <div className='gutter-row side-adsense text-center'>
+                                <img alt="example" src={img7} width={"200px"} />
+                                <h4 className="pt-4">This platform is our service of traveling</h4>
+                            </div>
 
                         </Col>
                     </Row>
@@ -332,7 +353,7 @@ export default class SemanticUiResponsive extends React.Component {
                             ))}
                         </Row>
                     </div>
-                    <h3 onClick={this.handleMayLikeClick} style={{ cursor: 'pointer', paddingBottom: "30px" }}>
+                    <h3 onClick={this.handleMayLikeClick} className="main-title">
                         You may like
                     </h3>
 
@@ -348,6 +369,30 @@ export default class SemanticUiResponsive extends React.Component {
                     )}
 
                     {!loadingMayLike && this.renderMayLikeSection()}
+
+                    
+                    <h3 style={{ cursor: 'pointer', paddingBottom: "10px" }}>
+                        Last News / Articles
+                    </h3>
+
+                    <div className="gutter-example">
+                        <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]}>
+                            {cardData.map((data, index) => (
+
+                                <Col className="py-4" sm={32} md={12} lg={8} xl={6} key={index}>
+                                    <div className="news-item">
+                                        <div className="news-img" style={{ backgroundImage: `url(${data.img})` }}>
+                                            {/* <img alt="example" src={data.img} /> */}
+                                        </div>
+                                        <div className="news-cnt">
+                                            <h5>{data.title}</h5>
+                                            <span className="py-2">{data.description}</span>
+                                        </div>
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
 
 
                     {/* <div className="gutter-example">

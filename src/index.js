@@ -10942,7 +10942,7 @@ class MainApp extends React.Component {
 
                             visitorData={this.visitorData()}
                         >
-                            <AdsMiddleware> 
+                            <AdsMiddleware>
                                 <SemanticUiResponsive
                                     device_form={page_properties_device_form}
                                     header={<SemanticNav
@@ -10972,16 +10972,10 @@ class Routing extends Component {
         return (
             <Router>
                 <div>
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <ul className="navbar-nav mr-auto">
-                            <li><Link to={'/home'} className="nav-link"> Main </Link></li>
-                            <li><Link to={'/step'} className="nav-link">Step</Link></li>
-                        </ul>
-                    </nav>
                     <Switch>
                         {/* <Route path='/' render={() => <MainApp dynamic={window.dynamic} timerStart={window.timerStart} data={window._sharedData} />} />
                         <Route path="/step" render={() => <Step />} /> */}
-                        <Route path="/home" component={MainApp} />
+                        <Route path="/" exact component={MainApp} />
                         <Route path="/step" component={Step} />
                     </Switch>
                 </div>
