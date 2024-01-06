@@ -37,10 +37,10 @@ let flag = "";
 
 
 const cardData = [
-    { img: img1, title: 'Europe Street beat1', user: "User name", link: "https://example.com", description: 'fjawepifajwefoi' },
-    { img: img2, title: 'Europe Street beat2', user: "User name", link: "https://example.com", description: 'fmpaowfj awegnipuasfgewa' },
-    { img: img3, title: 'Europe Street beat3', user: "User name", link: "https://example.com", description: 'wa fjewaof oawefjaowepifjawe f' },
-    { img: img4, title: 'Europe Street beat4', user: "User name", link: "https://example.com", description: 'sdfajpfe faowefjaweo fawef o' },
+    { img: img1, title: 'Europe Street beat1', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+    { img: img2, title: 'Europe Street beat2', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+    { img: img3, title: 'Europe Street beat3', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+    { img: img4, title: 'Europe Street beat4', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
 ];
 
 const mayLikeData = [
