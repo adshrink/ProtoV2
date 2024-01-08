@@ -2,6 +2,7 @@ import { getNestedObj } from '../services'
 
 import { CutDescriptionAndAppendLastPiece } from './simple/description'
 
+
 export function recaptcha_v2_block_page({ ref }) {
 
     return (
@@ -11,31 +12,23 @@ export function recaptcha_v2_block_page({ ref }) {
                     <div
                         ref={ref}
                         id="recaptcha_v2_block_page"
-                        className="ui grid stackable middle aligned lazy h100vh"
-                        data-bg-multi="linear-gradient(to left ,rgb(248 249 250) 40%, rgb(248 249 250 / 0%)), url(https://i.ibb.co/WHNbxPZ/bot-analytics-hero-illustration-3-1.png)"
+                        className="ui grid stackable middle aligned lazy"
+                        data-bg-multi="linear-gradient(to left ,rgb(248 249 250) 20%, rgb(248 249 250 / 0%)), url(../images/img-13.jpg)"
                         style={{
                             padding: "120px 0px",
                             backgroundColor: "#000000d6 !important",
                             width: "100% !important",
                             backgroundSize: "contain",
                             backgroundRepeat: "no-repeat",
-                            margin: "5%",
-                            backgroundPosition: "calc(50% + 50px) 50%",
+                            backgroundPosition: "calc(50%) 50%",
+                            height: "100vh",
                         }}
                     >
-                        {/* Left Column */}
-                        <div className="sixteen wide mobile eight wide tablet eight wide computer column">
+                        <div className="m-auto">
                             <div class="custom-center-align">
                                 <div id={getNestedObj(() => window.___reactjsD.captcha_class, "g-recaptcha")}>
                                     Loading..
                                 </div>
-                            </div>
-                        </div>
-
-                        {/* Right Column */}
-                        <div className="sixteen wide mobile eight wide tablet eight wide computer column">
-                            <div class="custom-center-align">
-                                {image_card()}
                             </div>
                         </div>
                     </div>

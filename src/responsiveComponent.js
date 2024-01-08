@@ -2,13 +2,13 @@ import React from 'react';
 import ErrorBoundary from './errorComponent';
 import antd from 'antd';
 
-
 import { DomPresenceTracker } from './middleware/index';
 
 import AdsenseBanner from './ui/adsense';
 import { Header } from './ui/static';
 
 import YandexAdUnit from './ui/ads/yandex';
+import AdsMiddleware from './middleware/adsMiddleware'
 
 import ModalButton from './modalWebpage';
 
@@ -24,13 +24,35 @@ import img9 from "./images/img-9.jpg";
 import img10 from "./images/img-10.jpg";
 import img11 from "./images/img-11.jpg";
 import img12 from "./images/img-12.jpg";
+import img13 from "./images/img-13.jpg";
 
 // import Tabs from "./tab";
 import { Button, Icon, Card, CardBody, CardHeader, Col, Container, Row, Badge, Tabs } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { TabPane } = Tabs;
 const { Meta } = Card;
-var orderNum = 0
+let orderNum = 0;
+let flag = "";
+
+
+const cardData = [
+    { img: img1, title: 'Europe Street beat1', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+    { img: img2, title: 'Europe Street beat2', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+    { img: img3, title: 'Europe Street beat3', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+    { img: img4, title: 'Europe Street beat4', user: "User name", link: "https://example.com", description: 'This website is the best platform for Europe street picture. There are so many pictures' },
+];
+
+const mayLikeData = [
+    { img: img5, title: 'Europe Street beat5', user: "User name", link: "https://example.com", description: 'awe fp wejfaowepfja[ wef[p' },
+    { img: img6, title: 'Europe Street beat6', user: "User name", link: "https://example.com", description: 'sdfa wepf weaoif[jaowie fj' },
+    { img: img7, title: 'Europe Street beat7', user: "User name", link: "https://example.com", description: 'asdfjawpf wepafjaw opfwe' },
+    { img: img8, title: 'Europe Street beat8', user: "User name", link: "https://example.com", description: ' wcfawenpj cewijc' },
+    { img: img9, title: 'Europe Street beat9', user: "User name", link: "https://example.com", description: 'sdf jaowfapew [awefa wefja[iwef' },
+    { img: img12, title: 'Europe Street beat10', user: "User name", link: "https://example.com", description: 'pf ja[wfwepfjoaiwe fpwejfawie f' },
+    { img: img10, title: 'Europe Street beat11', user: "User name", link: "https://example.com", description: 'we fopawjfepawejf awe[' },
+    { img: img11, title: 'Europe Street beat12', user: "User name", link: "https://example.com", description: 'cewnc;awe cewapcjwe' },
+];
 
 
 function callback(key) {
@@ -45,6 +67,9 @@ export default class SemanticUiResponsive extends React.Component {
 
             // elements to print and update one shot
             STATE_ref_container: 0,
+            selectedCard: null,
+            loadingMayLike: false, // Add this line
+            mayLikeSectionVisible: false, // Add a new state property
         }
         // refs
         this.ref_container = React.createRef();
@@ -92,7 +117,7 @@ export default class SemanticUiResponsive extends React.Component {
             navBarHeight = parseInt(navBarHeight);
             navBarHeight = navBarHeight + navBarHeight * 2 / 3;
             // set the margin top for the main container
-            document.querySelector('#adshnk-main-container').style.marginTop = navBarHeight + 'px';
+            // document.querySelector('#adshnk-main-container').style.marginTop = navBarHeight + 'px';
         }
 
         this.setState(prevState => ({
@@ -102,37 +127,80 @@ export default class SemanticUiResponsive extends React.Component {
         return true; // tell to update the DOM
     }
 
-    handleCardClick = (img, title, description, index) => {
+    handleCardClick = (img, title, link, user, description, index, flag) => {
         this.setState({
-            selectedCard: { img, title, description, index },
+            selectedCard: { img, title, link, user, description, index, flag },
         });
         orderNum = index;
         console.log("----------->", title, img);
 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 200, behavior: 'smooth' });
     };
 
 
+    handleMayLikeClick = () => {
+        // Show loading modal for 1 second before rendering "You may like" section
+        this.setState({ loadingMayLike: true });
+        setTimeout(() => {
+            this.setState({
+                loadingMayLike: false,
+                mayLikeSectionVisible: true,
+            });
+        }, 3000);
+    };
+
+    renderMayLikeSection = () => {
+        const { selectedCard, mayLikeSectionVisible } = this.state;
+
+        if (!mayLikeSectionVisible) {
+            return null; // Do not render anything if the section should not be visible yet
+        }
+
+        // Add a check for mayLikeData before mapping
+        if (!mayLikeData || !mayLikeData.length) {
+            return <div>No data available</div>;
+        }
+
+        return (
+            <div className="gutter-example">
+                <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]}>
+                    {mayLikeData.map((data, index) => (
+                        <Col className="py-4 px-2" sm={32} md={12} lg={8} xl={6} key={index}>
+                            <div className='gutter-row'>
+                                <Card
+                                    hoverable
+                                    style={{ width: "100%" }}
+                                    cover={<img alt="example" src={data.img} />}
+                                    onClick={() => {
+                                        flag = "mayLikeData"
+                                        this.handleCardClick(data.img, data.title, data.user, data.link, data.description, index, flag)
+                                    }}
+                                >
+                                    <Meta title={data.title} description={data.link} />
+                                    <p className="py-2">{data.description}</p>
+                                    <hr />
+                                    <p className="py-2 user-card"><Icon type="user" />{data.user}</p>
+                                </Card>
+                            </div>
+                        </Col>
+                    ))}
+                </Row>
+            </div>
+        );
+    };
+
     render() {
         const { Meta } = Card;
-        const { visible, confirmLoading, ModalText } = this.state;
+        const { visible, confirmLoading, ModalText, selectedCard, loadingMayLike } = this.state;
 
-        const cardData = [
-            { img: img1, title: 'Europe Street beat1', description: 'fjawepifajwefoi' },
-            { img: img2, title: 'Europe Street beat2', description: 'fmpaowfj awegnipuasfgewa' },
-            { img: img3, title: 'Europe Street beat3', description: 'wa fjewaof oawefjaowepifjawe f' },
-            { img: img4, title: 'Europe Street beat4', description: 'sdfajpfe faowefjaweo fawef o' },
-            { img: img5, title: 'Europe Street beat5', description: 'awe fp wejfaowepfja[ wef[p' },
-            { img: img6, title: 'Europe Street beat6', description: 'sdfa wepf weaoif[jaowie fj' },
-            { img: img7, title: 'Europe Street beat7', description: 'asdfjawpf wepafjaw opfwe' },
-            { img: img8, title: 'Europe Street beat8', description: ' wcfawenpj cewijc' },
-            { img: img9, title: 'Europe Street beat9', description: 'sdf jaowfapew [awefa wefja[iwef' },
-            { img: img12, title: 'Europe Street beat10', description: 'pf ja[wfwepfjoaiwe fpwejfawie f' },
-            { img: img10, title: 'Europe Street beat11', description: 'we fopawjfepawejf awe[' },
-            { img: img11, title: 'Europe Street beat12', description: 'cewnc;awe cewapcjwe' },
-        ];
+        let selectedcardData = cardData[0];
 
-        const selectedcardData = cardData[orderNum];
+        if (flag == "cardData") {
+            selectedcardData = cardData[orderNum];
+        }
+        else if (flag == "mayLikeData") {
+            selectedcardData = mayLikeData[orderNum];
+        }
 
         return (
             <div ref={this.ref_container}>
@@ -141,22 +209,44 @@ export default class SemanticUiResponsive extends React.Component {
                 {true === false && <YandexAdUnit blockId="R-A-2468309-1" />}
                 {true === false && <YandexAdUnit blockId="C-A-2468309-2" />}
 
+
                 <div id="adshnk-main-container" className="container">
                     <ErrorBoundary><AdsenseBanner size={'leaderboard'} from={'Component'} /></ErrorBoundary>
+                    <div className="adsense-bar">
+                        <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]} >
+                            <Col md={12} className="text-right">
+                                <img alt="example" src={img7} />
+                            </Col>
+                            <Col md={12}>
+                                <div style={{ padding: "20px" }}>
+                                    <span className='bg-secondary text-white px-3 py-1 m-2' style={{ borderRadius: "20px", fontSize: "10px" }}>
+                                        <Icon type="notification" /> Advertisment
+                                    </span>
+                                    <br />
+                                    <h3 className="pt-4">This platform is our service of traveling</h3>
+                                    <button className="free-access-btn rounded px-3"><Link to={'/step'} className="text-white">Learn more<Icon style={{ paddingLeft: "10px" }} type="arrow-right" /></Link></button>
+                                </div>
+                            </Col>
 
-                    <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]}>
+                        </Row>
+                    </div>
+
+
+                    <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]} className="pt-4">
                         <Col className="mb-4" md={24} lg={16}>
-                            <div className='gutter-row pt-5' id='cardDetail'>
-                                <span className='bg-success text-white px-3 py-1 m-3' style={{ borderRadius: "20px" }}>
-                                    <Icon type="calendar" /> 9 months
-                                </span>
-                                <span className='bg-success text-white px-3 py-1' style={{ borderRadius: "20px" }}>
-                                    <Icon type="fire" /> Trending
-                                </span>
+                            <div className='gutter-row pt-3' id='cardDetail'>
+                                <div className="ms-4">
+                                    <span className='bg-secondary text-white px-3 py-1 m-2' style={{ borderRadius: "20px", fontSize: "10px" }}>
+                                        <Icon type="calendar" /> 9 months
+                                    </span>
+                                    <span className='bg-secondary text-white px-3 py-1' style={{ borderRadius: "20px", fontSize: "10px" }}>
+                                        <Icon type="fire" /> Trending
+                                    </span>
+                                </div>
                                 <div className='p-4'>
                                     <h2 className='title py-2'>{selectedcardData.title}</h2>
                                     <h5>
-                                        <Icon type="user" /> Hydrogen
+                                        <Icon type="user" /> {selectedcardData.user}
                                     </h5>
                                 </div>
                                 <Card
@@ -183,7 +273,7 @@ export default class SemanticUiResponsive extends React.Component {
                                                 <span className='item'>Rating</span>
                                                 <span className='f-info'>
                                                     <span><Icon type="dislike" />123.123</span>
-                                                    <span><Icon type="like" />12.123</span>
+                                                    <span style={{ paddingLeft: "10px" }}><Icon type="like" />12.123</span>
                                                 </span>
                                             </div>
                                             <hr />
@@ -195,8 +285,9 @@ export default class SemanticUiResponsive extends React.Component {
                                             </div>
                                             <hr />
 
-                                            {/** <ModalButton /> */}
-                                            <p className='pt-3'>3 free Access Credits left today.</p>
+                                            <button className="free-access-btn rounded w-100"><Link to={'/step'} className="text-white">Free Access</Link></button>
+                                            {/* <ModalButton /> */}
+                                            {/* <p className='pt-3'>3 free Access Credits left today.</p> */}
                                         </div>
                                     </TabPane>
                                     <TabPane tab={<div><h5>Direct Access</h5><p>with Premium</p></div>} key="2">
@@ -211,7 +302,7 @@ export default class SemanticUiResponsive extends React.Component {
                                                 <span className='item'>Rating</span>
                                                 <span className='f-info'>
                                                     <span><Icon type="dislike" />123.123</span>
-                                                    <span><Icon type="like" />12.123</span>
+                                                    <span style={{ paddingLeft: "10px" }}><Icon type="like" />12.123</span>
                                                 </span>
                                             </div>
                                             <hr />
@@ -223,11 +314,15 @@ export default class SemanticUiResponsive extends React.Component {
                                             </div>
                                             <hr />
 
-                                            <Button type="primary w-100">Get Hydrogen Gateway</Button>
+                                            <button className="free-access-btn rounded w-100">Get Hydrogen Gateway</button>
                                             <p className='pt-3'>Start your 30-Day free Trial. Cancel anytime</p>
                                         </div>
                                     </TabPane>
                                 </Tabs>
+                            </div>
+                            <div className='gutter-row side-adsense text-center'>
+                                <img alt="example" src={img7} width={"200px"} />
+                                <h4 className="pt-4">This platform is our service of traveling</h4>
                             </div>
 
                         </Col>
@@ -237,6 +332,73 @@ export default class SemanticUiResponsive extends React.Component {
                         <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]}>
                             {cardData.map((data, index) => (
 
+                                <Col className="py-4" sm={32} md={12} lg={8} xl={6} key={index}>
+                                    <div className='gutter-row'>
+                                        <Card
+                                            hoverable
+                                            style={{ width: "100%" }}
+                                            cover={<img alt="example" src={data.img} />}
+                                            onClick={() => {
+                                                flag = "cardData"
+                                                this.handleCardClick(data.img, data.title, data.user, data.link, data.description, index, flag)
+                                            }}
+                                        >
+                                            <Meta title={data.title} description={data.link} />
+                                            <p className="py-2">{data.description}</p>
+                                            <hr />
+                                            <p className="py-2 user-card"><Icon type="user" />{data.user}</p>
+                                        </Card>
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
+                    <h3 onClick={this.handleMayLikeClick} className="main-title">
+                        You may like
+                    </h3>
+
+                    {/* Loading modal */}
+                    {loadingMayLike && (
+                        // Replace this with your actual loading modal component
+                        // <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                        //     Loading Modal...
+                        // </div>
+                        <div style={{ width: "100%", textAlign: "center", fontSize: "larger", padding: "30px" }}>
+                            <Icon type="loading" /><span className="px-3">Loading...</span>
+                        </div>
+                    )}
+
+                    {!loadingMayLike && this.renderMayLikeSection()}
+
+                    
+                    <h3 style={{ cursor: 'pointer', paddingBottom: "10px" }}>
+                        Last News / Articles
+                    </h3>
+
+                    <div className="gutter-example">
+                        <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]}>
+                            {cardData.map((data, index) => (
+
+                                <Col className="py-4" sm={32} md={12} lg={8} xl={6} key={index}>
+                                    <div className="news-item">
+                                        <div className="news-img" style={{ backgroundImage: `url(${data.img})` }}>
+                                            {/* <img alt="example" src={data.img} /> */}
+                                        </div>
+                                        <div className="news-cnt">
+                                            <h5>{data.title}</h5>
+                                            <span className="py-2">{data.description}</span>
+                                        </div>
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
+
+
+                    {/* <div className="gutter-example">
+                        <Row gutter={[{ xs: 4, sm: 8, md: 12, lg: 16 }]}>
+                            {mayLikeData.map((data, index) => (
+
                                 <Col className="py-4" sm={32} md={12} lg={8} xl={6}>
                                     <div className='gutter-row'>
                                         <Card
@@ -244,8 +406,11 @@ export default class SemanticUiResponsive extends React.Component {
                                             style={{ width: "100%" }}
                                             cover={<img alt="example"
                                                 src={data.img}
-                                                onClick={() => this.handleCardClick(data.img, data.title, data.description, index)}
                                             />}
+                                            onClick={() => {
+                                                flag = "mayLikeData"
+                                                this.handleCardClick(data.img, data.title, data.description, index, flag)
+                                            }}
                                         >
                                             <Meta title={data.title} description={data.description} />
                                         </Card>
@@ -253,9 +418,9 @@ export default class SemanticUiResponsive extends React.Component {
                                 </Col>
                             ))}
                         </Row>
-                    </div>
+                    </div> */}
 
-                    {this.props.steps}
+                    {/* {this.props.steps} */}
 
 
 
